@@ -7,8 +7,6 @@ export default function Footer() {
         <p>
           © {new Date().getFullYear()} {profile.name}
         </p>
-        <p>
-        </p>
       </div>
     </footer>
   );

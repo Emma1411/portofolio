@@ -1,9 +1,10 @@
-
 import { Globe } from 'lucide-react';
 import { useLocalized } from '../../hooks/useLocalized';
 import { useTilt } from '../../hooks/useTilt';
 import { ui } from '../../i18n/ui';
 import type { Repo } from '../../interfaces/content';
+import git from '../../../assets/lucide-github.png'
+
 
 export default function ProjectCard({ repo }: { repo: Repo }) {
   const t = useLocalized();
@@ -78,7 +79,7 @@ export default function ProjectCard({ repo }: { repo: Repo }) {
             className="glass inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold text-night transition hover:text-cobalt"
           >
             <img
-              src="/assets/lucide-github.png"
+              src={git}
               alt=""
               aria-hidden="true"
               className="h-[18px] w-[18px] object-contain"

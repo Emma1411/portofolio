@@ -1,8 +1,8 @@
-import { ArrowRight, Download } from 'lucide-react';
+import { ArrowRight} from 'lucide-react';
 import { useLocalized } from '../../hooks/useLocalized';
 import { useTypewriter } from '../../hooks/useTypewriter';
 import { ui } from '../../i18n/ui';
-import { experience, profile, projects } from '../../content';
+import { experience, profile,} from '../../content';
 import { yearsOfExperience } from '../../utils/content';
 
 export default function Hero() {

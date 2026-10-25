@@ -1,75 +1,61 @@
-# React + TypeScript + Vite
+# Portfolio — MBENGALA EMMANUEL VANECH
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+Portfolio personnel d'un développeur Data & Full-Stack. Application web React qui présente mon parcours, mes compétences et mes projets (pipelines de données, API, IA et interfaces). Site statique, bilingue (FR / EN), sans backend ni base de données : tout le contenu vit dans le projet sous forme de données typées.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🔗 Lien de démonstration : https://portofolio-ten-theta-20.vercel.app/
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Stack technique
 
-## Expanding the ESLint configuration
+| Composant | Technologie |
+|---|---|
+| Framework | React |
+| Langage | TypeScript |
+| État | React Context (langue), aucune bibliothèque d'état |
+| Styling | Tailwind CSS v3 |
+| Icônes | Lucide React |
+| Typographies | Space Grotesk, Inter, JetBrains Mono |
+| Build | Vite |
+| Formulaire | Formspree (optionnel) |
+| Déploiement | Vercel |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Architecture Frontend
 
 ```
-
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+┌─────────────────────────────────────────────────────────────────┐
+│                        React Application                        │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│   ┌──────────────┐    ┌──────────────┐    ┌──────────────┐      │
+│   │   Sections   │    │  Composants  │    │    Hooks     │      │
+│   │ Hero, About, │    │  cartes,     │    │ i18n, tilt,  │      │
+│   │  Projets...  │    │  timeline    │    │ in-view...   │      │
+│   └──────┬───────┘    └──────┬───────┘    └──────┬───────┘      │
+│          └───────────────────┼───────────────────┘              │
+│                              │                                  │
+│                     ┌────────▼────────┐                         │
+│                     │ LanguageContext │                         │
+│                     │    (FR / EN)    │                         │
+│                     └────────┬────────┘                         │
+│                              │                                  │
+│                     ┌────────▼────────┐                         │
+│                     │  Couche contenu │                         │
+│                     │  src/content/*  │                         │
+│                     └─────────────────┘                         │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+                              │ npm run build
+                              ▼
+                    ┌──────────────────┐
+                    │  Site statique   │
+                    │     (Vercel)     │
+                    └────────┬─────────┘
+                             │ formulaire (optionnel)
+                             ▼
+                    ┌──────────────────┐
+                    │                  │
+                    │    boîte Gmail   │
+                    └──────────────────┘
 ```

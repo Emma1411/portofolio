@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --c-bg: 244 248 252;
+  --c-ice: 234 243 255;
+  --c-sky: 191 220 255;
+  --c-azure: 0 163 255;
+  --c-cyan: 0 212 255;
+  --c-cobalt: 29 78 216;
+  --c-night: 11 27 51;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: rgb(var(--c-bg));
+  color: rgb(var(--c-night));
+  font-family: Inter, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgb(var(--c-azure) / 0.15);
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, rgb(var(--c-cobalt)), rgb(var(--c-cyan)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.aurora {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(55% 45% at 85% 0%, rgb(var(--c-cyan) / 0.2), transparent 70%),
+    radial-gradient(45% 40% at 0% 35%, rgb(var(--c-cobalt) / 0.1), transparent 70%),
+    radial-gradient(40% 35% at 70% 100%, rgb(var(--c-sky) / 0.55), transparent 70%);
+}
+
+.caret {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  margin-left: 2px;
+  vertical-align: -0.15em;
+  background: rgb(var(--c-azure));
+  animation: blink 1s steps(2) infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+.fade-in { animation: fadeIn 0.35s ease both; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(1.02); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}

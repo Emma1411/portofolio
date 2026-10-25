@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 524 524" role="img" aria-label="MV">
+  <defs>
+    <linearGradient id="gl" gradientUnits="userSpaceOnUse" x1="0" y1="162" x2="0" y2="382">
+      <stop offset="0" stop-color="#0284c7"/><stop offset="1" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="gr" gradientUnits="userSpaceOnUse" x1="0" y1="162" x2="0" y2="382">
+      <stop offset="0" stop-color="#2563eb"/><stop offset="1" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="7"/></filter>
+  </defs>
+  <rect x="4" y="4" width="516" height="516" rx="124" fill="#fff" stroke="#E2E8F0" stroke-width="8"/>
+  <rect x="17" y="17" width="490" height="490" rx="110" fill="#F8FAFC"/>
+  <g fill="none" stroke-width="24" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M92 382 V162 L192 312" stroke="url(#gl)"/>
+    <path d="M192 312 L262 200 L332 312" stroke="#2563eb"/>
+    <path d="M192 312 L262 422 L332 312" stroke="#0284c7"/>
+    <path d="M332 312 L432 162 V382" stroke="url(#gr)"/>
+  </g>
+  <circle cx="92" cy="162" r="15" fill="#0284c7"/>
+  <circle cx="432" cy="162" r="15" fill="#1d4ed8"/>
+  <circle cx="192" cy="312" r="14" fill="#0284c7"/>
+  <circle cx="332" cy="312" r="14" fill="#0284c7"/>
+  <circle cx="262" cy="422" r="15" fill="#2563eb"/>
+  <circle cx="262" cy="200" r="20" fill="#7dd3fc" opacity=".55" filter="url(#glow)"/>
+  <circle cx="262" cy="200" r="15" fill="#38bdf8"/>
+</svg>

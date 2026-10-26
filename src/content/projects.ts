@@ -149,25 +149,35 @@ export const projects = [
         url: `${GH}/emma-IA-demo-API`,
         image: emmaDemoApi,
       },
-      {
-        id: 'emma-ia-service',
-        name: 'emma-IA',
-        kind: 'ai',
-        badge: { fr: 'IA • AIDE À LA DÉCISION', en: 'AI • DECISION SUPPORT' },
-        sysTag: 'SYS: EMMA-IA',
-        title: { fr: 'Service d’analyse Emma IA', en: 'Emma IA analysis service' },
-        summary: {
-          fr: 'Elle extrait, structure et analyse les dossiers financiers, puis rédige synthèses et recommandations. Un outil d’aide à la décision, jamais un décideur autonome.',
-          en: 'She extracts, structures and analyzes financial files, then writes summaries and recommendations. A decision-support tool, never an autonomous decision-maker.',
-        },
-        stack: [
-          { label: 'IA', value: 'LLM · prompts versionnés' },
-          { label: 'API', value: 'FastAPI · streaming SSE' },
-        ],
-        tags: ['FastAPI', 'LLM', 'SSE'],
-        url: `${GH}/emma-IA`,
-        image: emmaIa,
-      },
+      
+{
+  id: 'emma-ia-service',
+  name: 'emma-IA',
+  kind: 'ai',
+  badge: { fr: 'DÉPLOYÉ • GOOGLE CLOUD', en: 'DEPLOYED • GOOGLE CLOUD' },
+  sysTag: 'SYS: EMMA-IA',
+  title: { fr: 'Service d’analyse Emma IA', en: 'Emma IA analysis service' },
+ 
+summary: {
+  fr: 'Un service d’analyse de crédit propulsé par un LLM, déployé sur Google Cloud Run. Il structure les dossiers financiers et formule des recommandations pour assister les analystes.',
+  en: 'An LLM-powered credit analysis service deployed on Google Cloud Run. It structures financial files and generates recommendations to assist analysts.',
+},
+
+  stack: [
+    { label: 'IA', value: 'LLM · DeepSeek API · prompts versionnés' },
+    { label: 'API', value: 'Python · FastAPI · Docker' },
+    { label: 'Cloud', value: 'Google Cloud Run · Artifact Registry' },
+    { label: 'CI/CD', value: 'GitHub · Cloud Build' },
+  ],
+  tags: ['FastAPI', 'LLM', 'Docker', 'Google Cloud Run', 'Cloud Build'],
+  url: `${GH}/emma-IA`,
+  image: emmaIa,
+  demo: {
+    url: 'https://emma-ia-419943434355.northamerica-northeast1.run.app/api/v1/docs',
+    label: { fr: 'Explorer l’API', en: 'Explore the API' },
+  },
+},
+
     ],
   },
   {

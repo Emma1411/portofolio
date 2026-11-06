@@ -7,6 +7,8 @@ import emmaIa from '../assets/projects/emma-ia.svg';
 import emmaDemoApi from '../assets/projects/emma-demo-api.svg';
 import emmaDemoFront from '../assets/projects/emma-demo-front.png';
 import collisions from '../assets/projects/collisions.png';
+import inframindFront from '../assets/projects/inframind-front.png';
+import inframindApi from '../assets/projects/inframind-api.svg';
 
 const GH = 'https://github.com/Emma1411';
 
@@ -255,6 +257,68 @@ summary: {
           url: 'https://collisions-montreal.vercel.app/',
           label: { fr: 'Explorer les données', en: 'Explore the data' },
         },
+      },
+      
+    ],
+  },
+    {
+    id: 'inframind',
+    order: 5,
+    title: 'InfraMind',
+    subtitle: { fr: 'Architecture cloud claire et honnête', en: 'Clear and honest cloud architecture' },
+    pitch: {
+      fr: 'Décrivez votre projet en français simple : InfraMind repère les besoins techniques, pose les questions qui manquent, compare quatre fournisseurs avec des prix publics et des hypothèses affichées, puis guide le déploiement pas à pas. L’IA comprend le besoin, mais c’est un moteur déterministe qui décide.',
+      en: 'Describe your project in plain language: InfraMind spots the technical needs, asks the missing questions, compares four providers with public prices and visible assumptions, then guides the deployment step by step. The AI understands the need, but a deterministic engine makes the decision.',
+    },
+    metrics: [
+      { value: '4', label: { fr: 'fournisseurs comparés', en: 'providers compared' } },
+      { value: '12', label: { fr: 'domaines techniques analysés', en: 'technical areas analyzed' } },
+      { value: '4', label: { fr: 'étapes guidées', en: 'guided steps' } },
+    ],
+    repos: [
+      {
+        id: 'inframind-front',
+        name: 'infraMind-front',
+        kind: 'front',
+        badge: { fr: 'EN LIGNE • DÉMO', en: 'LIVE • DEMO' },
+        sysTag: 'SYS: INFRAMIND-UI',
+        title: { fr: 'Décrivez, obtenez la bonne infra', en: 'Describe it, get the right infra' },
+        summary: {
+          fr: 'Quatre écrans, sans compte : décrire son projet, répondre aux questions qui manquent, voir l’architecture recommandée avec ses vrais coûts, puis suivre le guide de déploiement.',
+          en: 'Four screens, no account: describe your project, answer the missing questions, see the recommended architecture with its real costs, then follow the deployment guide.',
+        },
+        stack: [
+          { label: 'UI', value: 'React · TypeScript · Redux' },
+          { label: 'Web', value: 'Vite · Tailwind · Vercel' },
+        ],
+        tags: ['React', 'TypeScript', 'Tailwind', 'Vercel'],
+        url: `${GH}/infraMind-front`,
+        image: inframindFront,
+        demo: {
+          url: 'https://infra-mind-front.vercel.app/',
+          label: { fr: 'Essayer InfraMind', en: 'Try InfraMind' },
+        },
+      },
+      {
+        id: 'inframind-api',
+        name: 'infraMind-api',
+        kind: 'api',
+        badge: { fr: 'API • CLOUD RUN', en: 'API • CLOUD RUN' },
+        sysTag: 'SYS: INFRAMIND-API',
+        title: { fr: 'Moteur de recommandation', en: 'Recommendation engine' },
+        summary: {
+          fr: 'Le LLM extrait les besoins et pose les questions manquantes, puis un moteur de décision déterministe compare les architectures et chiffre les coûts. Les secrets évidents sont masqués avant l’envoi à l’IA et rien n’est stocké.',
+          en: 'The LLM extracts the needs and asks the missing questions, then a deterministic decision engine compares architectures and estimates costs. Obvious secrets are masked before reaching the AI and nothing is stored.',
+        },
+        stack: [
+          { label: 'API', value: 'FastAPI · clé d’API' },
+          { label: 'IA', value: 'DeepSeek · moteur séparé du LLM' },
+          { label: 'Tests', value: 'Pytest' },
+          { label: 'Cloud', value: 'Docker · Google Cloud Run' },
+        ],
+        tags: ['FastAPI', 'LLM','Pytest', 'Docker', 'Cloud Run'],
+        url: `${GH}/infraMind-api`,
+        image: inframindApi,
       },
     ],
   },

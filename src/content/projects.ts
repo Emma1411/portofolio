@@ -9,6 +9,8 @@ import emmaDemoFront from '../assets/projects/emma-demo-front.png';
 import collisions from '../assets/projects/collisions.png';
 import inframindFront from '../assets/projects/inframind-front.png';
 import inframindApi from '../assets/projects/inframind-api.svg';
+import copilotFront from '../assets/projects/onboarding-copilot-front.png';
+import copilotApi from '../assets/projects/onboarding-copilot-api.svg';
 
 const GH = 'https://github.com/Emma1411';
 
@@ -319,6 +321,66 @@ summary: {
         tags: ['FastAPI', 'LLM','Pytest', 'Docker', 'Cloud Run'],
         url: `${GH}/infraMind-api`,
         image: inframindApi,
+      },
+    ],
+  },
+    {
+    id: 'onboarding-copilot',
+    order: 6,
+    title: 'Onboarding Copilot',
+    subtitle: { fr: 'Questions sur un projet, réponses sourcées', en: 'Project Q&A with cited answers' },
+    pitch: {
+      fr: 'Un nouvel arrivant pose une question sur un projet logiciel et obtient une réponse avec des citations vers les décisions et les guides. Quatre étapes, de la moins chère à la plus chère : validation, cache, recherche locale BM25, puis synthèse par l’IA. Trois étapes sur quatre sont déterministes, et si l’IA est en pause, l’application affiche directement les passages trouvés.',
+      en: 'A newcomer asks a question about a software project and gets an answer with citations pointing to decisions and guides. Four steps, from cheapest to most expensive: validation, cache, local BM25 search, then AI synthesis. Three of the four steps are deterministic, and if the AI is paused, the app shows the passages it found directly.',
+    },
+    metrics: [
+      { value: '4', label: { fr: 'étapes, de la moins chère à la plus chère', en: 'steps, from cheapest to most expensive' } },
+      { value: '3/4', label: { fr: 'étapes déterministes', en: 'deterministic steps' } },
+      { value: '0', label: { fr: 'base de données', en: 'databases' } },
+    ],
+    repos: [
+      {
+        id: 'onboarding-copilot-front',
+        name: 'onboarding-copilot-front',
+        kind: 'front',
+        badge: { fr: 'EN LIGNE • DÉMO', en: 'LIVE • DEMO' },
+        sysTag: 'SYS: COPILOT-UI',
+        title: { fr: 'Posez une question au projet', en: 'Ask the project a question' },
+        summary: {
+          fr: 'Poser une question, consulter les décisions du projet et comprendre le fonctionnement, avec une vraie requête rejouée étape par étape.',
+          en: 'Ask a question, browse the project’s decisions and understand how it works, with a real request replayed step by step.',
+        },
+        stack: [
+          { label: 'UI', value: 'Angular · TypeScript' },
+          { label: 'Web', value: 'Déployé sur Vercel' },
+        ],
+        tags: ['Angular', 'TypeScript', 'Vercel'],
+        url: `${GH}/onboarding-copilot-front`,
+        image: copilotFront,
+        demo: {
+          url: 'https://onboarding-copilot-front.vercel.app/',
+          label: { fr: 'Essayer le copilote', en: 'Try the copilot' },
+        },
+      },
+      {
+        id: 'onboarding-copilot-backend',
+        name: 'onboarding-copilot-backend',
+        kind: 'api',
+        badge: { fr: 'API • SANS BASE DE DONNÉES', en: 'API • NO DATABASE' },
+        sysTag: 'SYS: COPILOT-API',
+        title: { fr: 'Moteur de réponses sourcées', en: 'Cited-answers engine' },
+        summary: {
+          fr: 'Validation et limites, cache mémoire de 24 h, recherche BM25 locale dans les décisions et les guides Markdown, puis synthèse DeepSeek avec citations. Chaque étape peut arrêter la requête avant l’IA.',
+          en: 'Validation and limits, a 24-hour memory cache, local BM25 search over decisions and Markdown guides, then DeepSeek synthesis with citations. Each step can stop the request before it reaches the AI.',
+        },
+        stack: [
+          { label: 'API', value: 'Node.js · limite par IP' },
+          { label: 'Search', value: 'BM25 · MiniSearch · Markdown' },
+          { label: 'IA', value: 'DeepSeek · température 0,2' },
+        ],
+        tags: ['Node.js', 'BM25', 'DeepSeek', 'Rate limiting'],
+        url: `${GH}/onboarding-copilot-backend`,
+        image: copilotApi,
       },
     ],
   },

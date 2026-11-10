@@ -12,7 +12,7 @@ export default function Skills() {
 
   return (
     <Section id="skills" title={t(ui.sections.skillsTitle)} lead={t(ui.sections.skillsLead)}>
-      <div ref={ref} className="grid gap-5 md:grid-cols-2">
+      <div ref={ref} className="grid gap-5 md:grid-cols-3">
         {skills.map((cat, ci) => (
           <article key={cat.id} className="glass flex flex-col rounded-3xl p-6 shadow-soft">
             <h3 className="font-display text-xl font-bold text-night">{t(cat.title)}</h3>
